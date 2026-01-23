@@ -1,0 +1,495 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+    padding-top: 140px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: #333;
+}
+
+/* Header & Nav */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    margin: 0;
+    color: #fff;
+    font-size: 1.8rem;
+}
+
+nav {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background-color: #444;
+    padding: 0.8rem;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 999;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav a {
+    color: #eee;
+    text-decoration: none;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+nav a:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Main Content */
+main {
+    flex: 1;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+h1,
+h2 {
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 0;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+/* Common Containers */
+.katalogo-atalak {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.katalogo-edukia {
+    width: 100%;
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    box-sizing: border-box;
+}
+
+/* Products Grid */
+.sareko-produktuak {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.produktu-txartelak {
+    background-color: #fff;
+    width: 220px;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.produktu-txartelak:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.produktu-txartelak img {
+    width: 140px;
+    height: auto;
+    margin-bottom: 15px;
+    object-fit: contain;
+}
+
+.produktu-txartelak a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.produktu-txartelak h3 {
+    margin: 10px 0;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.produktu-txartelak .prezioa {
+    font-weight: bold;
+    color: #007bff;
+    font-size: 1.2rem;
+    margin: 5px 0;
+}
+
+.produktu-txartelak .deskontua {
+    color: #e74c3c;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+/* Product Detail Page */
+.produktu-xehetasunak {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.produktu-goiburua {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.produktu-goiburua h1 {
+    font-size: 2rem;
+    color: #333;
+    border-bottom: none;
+}
+
+.produktu-edukia {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.produktu-irudia {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.produktu-irudia img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.produktu-informazioa {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info-atalak {
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 6px;
+    border-left: 4px solid #007bff;
+}
+
+.info-atalak strong {
+    display: block;
+    color: #333;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+
+.info-atalak p {
+    margin: 0;
+    color: #555;
+    line-height: 1.6;
+}
+
+.info-atalak .prezioa {
+    font-size: 2rem;
+    color: #28a745;
+    font-weight: bold;
+}
+
+.deskontua-atalak {
+    padding: 20px;
+    border-left: 4px solid #dc3545;
+    background: #fff3cd;
+    border-radius: 6px;
+    color: #856404;
+}
+
+.deskontua-atalak strong {
+    display: block;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.atzera-botoia {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.atzera-botoia a {
+    display: inline-block;
+    padding: 12px 30px;
+    background: #6c757d;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.atzera-botoia a:hover {
+    background: #5a6268;
+}
+
+/* Category List */
+.kategoria-item {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.kategoria-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.kategoria-item a {
+    text-decoration: none;
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    align-items: center;
+    color: inherit;
+}
+
+.kategoria-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 6px;
+    flex-shrink: 0;
+}
+
+.kategoria-izena {
+    margin: 0 0 5px;
+    color: #007bff;
+    font-size: 1.3rem;
+}
+
+.kategoria-item p {
+    margin: 0;
+    color: #666;
+}
+
+/* Forms (Mezuak & Eskariak) */
+.mezua-form,
+.eskaria-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.mezua-form label,
+.eskaria-form label {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.mezua-form input,
+.mezua-form textarea,
+.eskaria-form input,
+.eskaria-form textarea {
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+.mezua-form input:focus,
+.mezua-form textarea:focus,
+.eskaria-form input:focus,
+.eskaria-form textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.mezua-form button,
+.eskaria-form button {
+    cursor: pointer;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.2s;
+    margin-top: 10px;
+}
+
+.mezua-form button:hover,
+.eskaria-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Lists (Mezuak & Eskariak) */
+.mezuak-lista,
+.eskariak-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.mezua-item,
+.eskaria-item {
+    padding: 20px;
+    border: 1px solid #eee;
+    border-left: 4px solid #007bff;
+    border-radius: 4px;
+    background-color: #fcfcfc;
+}
+
+.mezua-item h3,
+.eskaria-item h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.1rem;
+    color: #444;
+}
+
+.mezua-item p,
+.eskaria-item p {
+    margin: 5px 0;
+    line-height: 1.5;
+}
+
+.mezua-item em,
+.eskaria-item em {
+    color: #777;
+    font-size: 0.9rem;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: auto;
+    width: 100%;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.4rem;
+    }
+
+    nav ul {
+        gap: 10px;
+    }
+
+    nav a {
+        font-size: 0.9rem;
+        padding: 0.5rem 0.5rem;
+    }
+
+    main {
+        padding: 15px;
+    }
+
+    .produktu-xehetasunak {
+        padding: 20px;
+    }
+
+    .produktu-goiburua h1 {
+        font-size: 1.5rem;
+    }
+
+    .produktu-edukia {
+        gap: 20px;
+    }
+
+    .produktu-irudia,
+    .produktu-informazioa {
+        min-width: 100%;
+    }
+
+    .kategoria-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .kategoria-item a {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.2rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    nav a {
+        font-size: 0.8rem;
+        display: block;
+    }
+
+    .produktu-goiburua h1 {
+        font-size: 1.2rem;
+    }
+
+    .info-atalak .prezioa {
+        font-size: 1.5rem;
+    }
+}

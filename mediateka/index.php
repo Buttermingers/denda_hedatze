@@ -3,7 +3,7 @@ $page_title = 'Mediateka - Denda';
 include '../includes/header.php';
 ?>
 
-<link rel="stylesheet" href="../css/mediateka.css">
+<link rel="stylesheet" href="css/mediateka.css">
 
 <section class="katalogo-atalak">
     <div class="katalogo-edukia">
@@ -37,70 +37,78 @@ include '../includes/header.php';
             <h4>Figure eta Figcaption</h4>
             <figure>
                 <img src="../img/SGEpiphone.jpg" alt="Epiphone SG" style="max-width: 300px; height: auto;">
-                <figcaption>Irudia 1: Epiphone SG eredua, rock estiloko klasikoa.</figcaption>
+                <figcaption> Epiphone SG, rock estiloko klasikoa.</figcaption>
             </figure>
 
-            <h4>CSS Sprites</h4>
-            <p>Irudi bakar bat kargatu eta posizioa aldatuz zati desberdinak erakutsi (hover efektua):</p>
-            <div class="sprite-container sprite-hover"></div>
-
-
-        </section>
-
-        <!-- 2. AUDIOA -->
-        <section>
-            <h3>Audioa</h3>
-
-            <h4>HTML5 Audio Tag</h4>
-
-            <audio id="myAudio" controls>
-                <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-                Zure nabigatzaileak ez du audio elementua onartzen.
-            </audio>
-
-            <h4>Javascript Audio Metodoak</h4>
-            <div class="controls">
-                <button onclick="playAudio()">Play</button>
-                <button onclick="pauseAudio()">Pause</button>
-                <button onclick="restartAudio()">Hasierara</button>
-            </div>
-        </section>
-
-        <!-- 3. BIDEOA -->
-        <section>
-            <h3>Bideoa</h3>
-
-            <h4>HTML5 Video Tag</h4>
-
-            <video id="myVideo" width="400" controls>
-                <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
-                Zure nabigatzaileak ez du bideo elementua onartzen.
-            </video>
-
-            <h4>Javascript Bideo Metodoak</h4>
-            <div class="controls">
-                <button onclick="playVideo()">Play</button>
-                <button onclick="pauseVideo()">Pause</button>
-                <button onclick="muteVideo()">Mute/Unmute</button>
+            <h4>Musika (Sprite)</h4>
+            <p>Musika tresnen sprite bat:</p>
+            <div class="sprite-container">
+                <a href="index.php" title="Hasierara joan">
+                    <div class="sprite-icon sprite-bakarra"></div>
+                </a>
             </div>
 
-            <h4>Iframe (YouTube)</h4>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                title="YouTube video player" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-            </iframe>
-        </section>
+
+            <section>
+                <h3>Audioa</h3>
+
+                <h4>HTML5 Audio Tag</h4>
+
+                <audio id="myAudio" controls autoplay>
+                    <source src="multimedia/hendrix.mp3" type="audio/mpeg">
+                    Zure nabigatzaileak ez du audio elementua onartzen.
+                </audio>
+
+                <h4>Javascript Audio Metodoak</h4>
+                <div class="controls">
+                    <button onclick="changeAudio('multimedia/hendrix.mp3')">Hendrix</button>
+                    <button onclick="changeAudio('multimedia/clapton.mp3')">Clapton</button>
+                    <br><br>
+                    <button onclick="playAudio()">Play</button>
+                    <button onclick="pauseAudio()">Pause</button>
+                    <button onclick="restartAudio()">Hasierara</button>
+                </div>
+            </section>
+
+            <section>
+                <h3>Bideoa</h3>
+
+                <h4>HTML5 Video Tag</h4>
+
+                <h4>Aukeratu bideoa:</h4>
+                <div class="controls" style="margin-bottom: 20px;">
+                    <button onclick="changeVideo('multimedia/video.mp4')">Fender</button>
+                    <button onclick="changeVideo('multimedia/hendrix.mp4')">Hendrix live</button>
+                    <button onclick="changeVideo('multimedia/clapton.mp4')">Clapton live</button>
+                </div>
+
+                <video id="myVideo" width="400" controls>
+                    <source id="videoSource" src="multimedia/video.mp4" type="video/mp4">
+                    Zure nabigatzaileak ez du bideo elementua onartzen.
+                </video>
+
+                <h4>Javascript Bideo Metodoak</h4>
+                <div class="controls">
+                    <button onclick="playVideo()">Play</button>
+                    <button onclick="pauseVideo()">Pause</button>
+                    <button onclick="muteVideo()">Mute/Unmute</button>
+                </div>
+
+                <h4>Iframe (YouTube)</h4>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </section>
     </div>
 </section>
 
 <script>
-    // CAROUSEL LOGIC
     const track = document.getElementById('track');
     let currentIndex = 0;
     let autoPlayInterval;
 
-    // Determine how many items are visible based on screen width
     function getItemsVisible() {
         if (window.innerWidth <= 480) return 1;
         if (window.innerWidth <= 768) return 2;
@@ -125,22 +133,21 @@ include '../includes/header.php';
         track.style.transform = `translateX(-${percentage}%)`;
     }
 
-    // Auto Play
     function startAutoPlay() {
-        stopAutoPlay(); // Clear existing to avoid dupes
+        stopAutoPlay();
         autoPlayInterval = setInterval(() => {
             moveSlide(1);
-        }, 3000); // 3 seconds
+        }, 2000);
     }
 
     function stopAutoPlay() {
         clearInterval(autoPlayInterval);
     }
 
-    // Touch / Swipe Support
+
+    const carouselContainer = document.getElementById('carousel-container');
     let touchStartX = 0;
     let touchEndX = 0;
-    const carouselContainer = document.getElementById('carousel-container');
 
     carouselContainer.addEventListener('touchstart', e => {
         touchStartX = e.changedTouches[0].screenX;
@@ -149,33 +156,20 @@ include '../includes/header.php';
 
     carouselContainer.addEventListener('touchend', e => {
         touchEndX = e.changedTouches[0].screenX;
-        handleSwipe();
+        if (touchEndX < touchStartX - 50) moveSlide(1);
+        if (touchEndX > touchStartX + 50) moveSlide(-1);
         startAutoPlay();
     });
 
-    // Pause on hover
     carouselContainer.addEventListener('mouseenter', stopAutoPlay);
     carouselContainer.addEventListener('mouseleave', startAutoPlay);
-
-    function handleSwipe() {
-        if (touchEndX < touchStartX - 50) {
-            moveSlide(1); // Swipe Left -> Next
-        }
-        if (touchEndX > touchStartX + 50) {
-            moveSlide(-1); // Swipe Right -> Prev
-        }
-    }
-
-    // Init
-    window.addEventListener('resize', () => {
-        moveSlide(0);
-    });
-
+    window.addEventListener('resize', () => moveSlide(0));
     startAutoPlay();
 
 
-    // AUDIO FUNCTIONS
+    // --- AUDIO LOGIKA ---
     var audio = document.getElementById("myAudio");
+    audio.volume = 0.3;
 
     function playAudio() {
         audio.play();
@@ -190,7 +184,15 @@ include '../includes/header.php';
         audio.play();
     }
 
-    // VIDEO FUNCTIONS
+
+    function changeAudio(file) {
+        audio.src = file;
+        audio.load();
+        audio.play().catch(error => console.log("Autoplay bloqueado"));
+    }
+
+
+    // --- VIDEO LOGIKA ---
     var video = document.getElementById("myVideo");
 
     function playVideo() {
@@ -203,6 +205,16 @@ include '../includes/header.php';
 
     function muteVideo() {
         video.muted = !video.muted;
+    }
+
+    function changeVideo(file) {
+        var source = document.getElementById("videoSource");
+        source.src = file;
+        video.src = file;
+        video.load();
+        video.play().catch(error => {
+            console.log("Autoplay-a blokeatuta, erabiltzaileak Play sakatu behar du.");
+        });
     }
 </script>
 

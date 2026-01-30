@@ -8,8 +8,8 @@ $page_css = $page_css ?? 'styleFlexbox.css';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo htmlspecialchars($page_title); ?></title>
-    <link rel="stylesheet" href="/denda/css/style.css">
-    <link rel="icon" type="image/png" href="/denda/mediateka/multimedia/waluigi.png">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" type="image/png" href="../mediateka/multimedia/waluigi.png">
 </head>
 
 <body>
@@ -18,11 +18,11 @@ $page_css = $page_css ?? 'styleFlexbox.css';
     </header>
     <nav>
         <ul>
-            <li><a href="/denda/hasiera/index.php">Hasiera</a></li>
-            <li><a href="/denda/katalogoa/">Katalogoa</a></li>
-            <li><a href="/denda/mezuak/index.php">Kontaktua</a></li>
-            <li><a href="/denda/karritoa/index.php">Karritoa</a></li>
-            <li><a href="/denda/mediateka/index.php">Mediateka</a></li>
+            <li><a href="../hasiera/index.php">Hasiera</a></li>
+            <li><a href="../katalogoa/">Katalogoa</a></li>
+            <li><a href="../mezuak/index.php">Kontaktua</a></li>
+            <li><a href="../karritoa/index.php">Karritoa</a></li>
+            <li><a href="../mediateka/index.php">Mediateka</a></li>
         </ul>
     </nav>
     <main>

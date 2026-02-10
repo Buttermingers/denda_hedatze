@@ -50,7 +50,7 @@ class Saskia
         foreach ($this->detaileak as $key => $d) {
             if ($d->getProduktua()->getId() == $detailea->getProduktua()->getId()) {
                 unset($this->detaileak[$key]);
-                $this->detaileak = array_values($this->detaileak); 
+                $this->detaileak = array_values($this->detaileak);
                 break;
             }
         }
@@ -59,6 +59,15 @@ class Saskia
     public function getDetaileKopurua()
     {
         return count($this->detaileak);
+    }
+
+    public function getGuztira()
+    {
+        $guztira = 0;
+        foreach ($this->detaileak as $detailea) {
+            $guztira += $detailea->getGuztira();
+        }
+        return $guztira;
     }
 }
 ?>

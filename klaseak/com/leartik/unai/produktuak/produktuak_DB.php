@@ -256,6 +256,32 @@ class ProduktuaDB
         return $produktuak;
     }
 
+    public function searchProduktuak(string $term): array
+    {
+        $produktuak = [];
+        $term = "%" . $term . "%";
+
+        try {
+            $sql = "SELECT id, izena, deskribapena, prezioa, irudia,
+                           kategoriak_ID AS kategoria_id, ofertas, novedades, descuento
+                    FROM gitarrak
+                    WHERE izena LIKE :term OR deskribapena LIKE :term";
+
+            $stmt = $this->konexioa->prepare($sql);
+            $stmt->bindValue(':term', $term);
+            $stmt->execute();
+
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                $produktuak[] = $this->mapProduktua($row);
+            }
+
+        } catch (PDOException $e) {
+            error_log("Errorea produktuak bilatzean: " . $e->getMessage());
+        }
+
+        return $produktuak;
+    }
+
     public function __destruct()
     {
         $this->konexioa = null;

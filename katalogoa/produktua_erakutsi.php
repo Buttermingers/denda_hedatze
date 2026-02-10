@@ -2,7 +2,7 @@
 
 
 $page_title = htmlspecialchars($produktua->getIzena()) . ' - Denda';
-$page_css = 'styleProduktuaFlex.css';
+$page_css = 'style.css';
 
 include '../includes/header.php';
 ?>

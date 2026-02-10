@@ -1,7 +1,7 @@
 <?php
 
 $page_title = htmlspecialchars($kategoria->getIzena()) . ' - Denda';
-$page_css = 'styleKategoriaFlex.css';
+$page_css = 'style.css';
 
 include '../includes/header.php';
 ?>
@@ -17,7 +17,8 @@ include '../includes/header.php';
                 <?php foreach ($produktuak as $produktua): ?>
                     <div class="produktu-txartelak">
                         <a href="index.php?action=produktua&id=<?php echo $produktua->getId(); ?>">
-                            <img src="../img/<?php echo htmlspecialchars($produktua->getIrudia()); ?>" alt="<?php echo htmlspecialchars($produktua->getIzena()); ?>">
+                            <img src="../img/<?php echo htmlspecialchars($produktua->getIrudia()); ?>"
+                                alt="<?php echo htmlspecialchars($produktua->getIzena()); ?>">
                             <h3><?php echo htmlspecialchars($produktua->getIzena()); ?></h3>
                             <p class="prezioa"><?php echo htmlspecialchars($produktua->getPrezioa()); ?>€</p>
                             <?php if ($produktua->getDescuento() > 0): ?>

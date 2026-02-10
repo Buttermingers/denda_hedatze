@@ -1,5 +1,5 @@
 <?php
-$action = isset($_GET['action']) ? $_GET['action'] : 'kategoriak';
+$action = isset($_GET['action']) ? $_GET['action'] : 'guztiak';
 
 require_once dirname(__DIR__) . '/klaseak/com/leartik/unai/kategoriak/kategoriak_DB.php';
 require_once dirname(__DIR__) . '/klaseak/com/leartik/unai/produktuak/produktuak_DB.php';
@@ -47,10 +47,16 @@ switch ($action) {
         }
         break;
 
+    case 'guztiak':
+        $produktuaDB = new ProduktuaDB();
+        $produktuak = $produktuaDB->getProduktuak();
+        include 'produktuak_guztiak.php';
+        break;
+
     default:
-        $kategoriaDB = new KategoriaDB();
-        $kategoriak = $kategoriaDB->getKategoriak();
-        include 'kategoriak_erakutsi.php';
+        $produktuaDB = new ProduktuaDB();
+        $produktuak = $produktuaDB->getProduktuak();
+        include 'produktuak_guztiak.php';
         break;
 }
 ?>

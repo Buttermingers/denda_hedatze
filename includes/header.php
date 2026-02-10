@@ -1,6 +1,6 @@
 <?php
 $page_title = $page_title ?? 'Denda';
-$page_css = $page_css ?? 'styleFlexbox.css';
+$page_css = $page_css ?? 'style.css';
 ?><!DOCTYPE html>
 <html lang="eu">
 
@@ -8,7 +8,7 @@ $page_css = $page_css ?? 'styleFlexbox.css';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo htmlspecialchars($page_title); ?></title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/<?php echo htmlspecialchars($page_css); ?>">
     <link rel="icon" type="image/png" href="../mediateka/multimedia/waluigi.png">
 </head>
 

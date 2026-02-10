@@ -1,7 +1,7 @@
 <?php
 
 $page_title = 'Kategoriak - Denda';
-$page_css = 'styleKategoriaFlex.css';
+$page_css = 'style.css';
 
 include '../includes/header.php';
 ?>

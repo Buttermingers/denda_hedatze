@@ -43,7 +43,7 @@ include '../includes/header.php';
             <h4>Musika (Sprite)</h4>
             <p>Musika tresnen sprite bat:</p>
             <div class="sprite-container">
-                <a href="index.php" title="Hasierara joan">
+                <a href="../hasiera/index.php" title="Hasierara joan">
                     <div class="sprite-icon sprite-bakarra"></div>
                 </a>
             </div>
@@ -67,6 +67,8 @@ include '../includes/header.php';
                     <button onclick="playAudio()">Play</button>
                     <button onclick="pauseAudio()">Pause</button>
                     <button onclick="restartAudio()">Hasierara</button>
+                    <button onclick="changeAudioVolume(0.1)"> Vol +</button>
+                    <button onclick="changeAudioVolume(-0.1)"> Vol -</button>
                 </div>
             </section>
 
@@ -92,6 +94,8 @@ include '../includes/header.php';
                     <button onclick="playVideo()">Play</button>
                     <button onclick="pauseVideo()">Pause</button>
                     <button onclick="muteVideo()">Mute/Unmute</button>
+                    <button onclick="changeVideoVolume(0.1)"> Vol +</button>
+                    <button onclick="changeVideoVolume(-0.1)"> Vol -</button>
                 </div>
 
                 <h4>Iframe (YouTube)</h4>
@@ -184,6 +188,13 @@ include '../includes/header.php';
         audio.play();
     }
 
+    function changeAudioVolume(amount) {
+        let newVolume = audio.volume + amount;
+        if (newVolume > 1) newVolume = 1;
+        if (newVolume < 0) newVolume = 0;
+        audio.volume = newVolume;
+    }
+
 
     function changeAudio(file) {
         audio.src = file;
@@ -205,6 +216,13 @@ include '../includes/header.php';
 
     function muteVideo() {
         video.muted = !video.muted;
+    }
+
+    function changeVideoVolume(amount) {
+        let newVolume = video.volume + amount;
+        if (newVolume > 1) newVolume = 1;
+        if (newVolume < 0) newVolume = 0;
+        video.volume = newVolume;
     }
 
     function changeVideo(file) {

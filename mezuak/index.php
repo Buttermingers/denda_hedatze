@@ -1,10 +1,6 @@
 <?php
 session_start();
-require_once __DIR__ . '/../klaseak/com/leartik/unai/mezuak/mezuak.php';
-require_once __DIR__ . '/../klaseak/com/leartik/unai/mezuak/mezuaDB.php';
 
-$mezuaDB = new MezuaDB();
-$mezuak = $mezuaDB->getMezuak();
 
 $page_title = 'Kontaktua - Mezuak';
 $page_css = 'style.css';
@@ -72,24 +68,7 @@ include __DIR__ . '/../includes/header.php';
     });
 </script>
 
-<div class="katalogo-edukia">
-    <h2>📬 Jaso ditugun mezuak</h2>
 
-    <?php if (!empty($mezuak)): ?>
-        <div class="mezuak-lista">
-            <?php foreach ($mezuak as $mezua): ?>
-                <div class="mezua-item">
-                    <h3><?php echo htmlspecialchars($mezua->getIzena()); ?>
-                        (<?php echo htmlspecialchars($mezua->getEmaila()); ?>)</h3>
-                    <p><?php echo nl2br(htmlspecialchars($mezua->getMezua())); ?></p>
-                    <p><em>Erantzunda: <?php echo $mezua->getErantzunda() ? 'Bai' : 'Ez'; ?></em></p>
-                </div>
-            <?php endforeach; ?>
-        </div>
-    <?php else: ?>
-        <p>Ezta mezurik.</p>
-    <?php endif; ?>
-</div>
 </section>
 
 <?php include __DIR__ . '/../includes/footer.php'; ?>

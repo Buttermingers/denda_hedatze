@@ -2,7 +2,7 @@
 define('PROJECT_ROOT', dirname(__DIR__));
 
 $page_title = 'Denda - Hasiera';
-$page_css = 'styleFlexbox.css';
+$page_css = 'style.css';
 
 require_once '../includes/header.php';
 

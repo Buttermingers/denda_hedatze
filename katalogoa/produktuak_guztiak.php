@@ -10,7 +10,12 @@ include '../includes/header.php';
     <h1>Produktu Guztiak</h1>
 
     <div class="search-bar-container">
-        <input type="text" id="search-input" placeholder="Bilatu produktua...">
+        <input type="text" id="search-input" placeholder="Bilatu produktua..." list="products-suggestions">
+        <datalist id="products-suggestions">
+            <?php foreach ($produktuak as $produktua): ?>
+                <option value="<?php echo htmlspecialchars($produktua->getIzena()); ?>">
+                <?php endforeach; ?>
+        </datalist>
     </div>
 
     <div id="produktuak-container" class="sareko-produktuak">
@@ -47,10 +52,17 @@ include '../includes/header.php';
 
         searchInput.addEventListener('input', function () {
             const query = this.value;
+            console.log('Searching for:', query);
 
             fetch('produktuak_bilatu.php?q=' + encodeURIComponent(query))
-                .then(response => response.json())
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
                 .then(data => {
+                    console.log('Results:', data);
                     productsContainer.innerHTML = '';
 
                     if (data.length > 0) {

@@ -36,7 +36,7 @@ if ($jsonData !== false) {
             <?php else: ?>
                 <?php foreach ($ofertak as $prod): ?>
                     <div class="produktu-txartelak">
-                        <a href="../katalogoa/produktua_erakutsi.php?id=<?php echo $prod['id']; ?>">
+                        <a href="../katalogoa/index.php?action=produktua&id=<?php echo $prod['id']; ?>">
                             <img src="../img/<?php echo htmlspecialchars($prod['irudia']); ?>"
                                 alt="<?php echo htmlspecialchars($prod['izena']); ?>">
                             <h3><?php echo htmlspecialchars($prod['izena']); ?></h3>
@@ -59,7 +59,7 @@ if ($jsonData !== false) {
             <?php else: ?>
                 <?php foreach ($berriak as $prod): ?>
                     <div class="produktu-txartelak">
-                        <a href="../katalogoa/produktua_erakutsi.php?id=<?php echo $prod['id']; ?>">
+                        <a href="../katalogoa/index.php?action=produktua&id=<?php echo $prod['id']; ?>">
                             <img src="../img/<?php echo htmlspecialchars($prod['irudia']); ?>"
                                 alt="<?php echo htmlspecialchars($prod['izena']); ?>">
                             <h3><?php echo htmlspecialchars($prod['izena']); ?></h3>

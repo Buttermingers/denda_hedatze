@@ -15,11 +15,7 @@ require_once '../includes/header.php';
 </section>
 
 <script>
-<<<<<<< HEAD
-    fetch('http://localhost/Vue/vue-project_api/api/albisteak.php')
-=======
-    fetch('http://localhost/denda/api/albisteak.php')
->>>>>>> 755ddeb (Actualización de denda_hedatze)
+    fetch('../api/albisteak.php')
         .then(res => res.json())
         .then(albisteak => {
             const div = document.getElementById('albisteak-container');

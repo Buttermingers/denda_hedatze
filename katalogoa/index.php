@@ -1,4 +1,5 @@
 <?php
+session_start();
 $action = isset($_GET['action']) ? $_GET['action'] : 'guztiak';
 
 require_once dirname(__DIR__) . '/klaseak/com/leartik/unai/kategoriak/kategoriak_DB.php';

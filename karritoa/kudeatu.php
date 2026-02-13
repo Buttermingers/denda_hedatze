@@ -31,6 +31,7 @@ try {
             $detailea->setKopurua($kantitatea);
             $saskia->detaileaGehitu($detailea);
             $_SESSION['saskia'] = $saskia;
+            $_SESSION['cart_message'] = 'Saskira gehituta';
         }
 
         if (isset($_SERVER['HTTP_REFERER'])) {

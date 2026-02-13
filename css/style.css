@@ -780,3 +780,37 @@ footer {
 .btn-continue:hover {
     background-color: #0056b3;
 }
+
+/* Albisteak (News) */
+.albistea-item {
+    padding: 20px;
+    border: 1px solid #eee;
+    border-left: 4px solid #007bff;
+    border-radius: 4px;
+    background-color: #fcfcfc;
+    margin-bottom: 20px;
+    text-align: left;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.albistea-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.albistea-item h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.albistea-item p {
+    margin: 5px 0 10px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.albistea-item small {
+    color: #888;
+    font-style: italic;
+}

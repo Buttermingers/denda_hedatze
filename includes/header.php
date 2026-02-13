@@ -23,6 +23,7 @@ $page_css = $page_css ?? 'style.css';
             <li><a href="../mezuak/index.php">Kontaktua</a></li>
             <li><a href="../karritoa/index.php">Karritoa</a></li>
             <li><a href="../mediateka/index.php">Mediateka</a></li>
+            <li><a href="../albisteak/index.php">Albisteak</a></li>
         </ul>
     </nav>
     <main>
